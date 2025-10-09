@@ -1,0 +1,80 @@
+# ~/.config/yazi/yazi.toml
+
+[mgr]
+ratio = [1, 3, 3]                         # [parent, current, preview] pane ratios
+sort_by = "natural"                        # Human-friendly sorting
+sort_sensitive = false
+sort_reverse = false
+sort_dir_first = true
+sort_translit = true
+linemode = "mtime"                        # check doc for more options or set to "none"
+show_icons = true                          # Show icons for files/folders
+show_hidden = false                         # Show dotfiles
+show_symlink = true
+scrolloff = 5
+mouse_events = [ "click", "scroll" ]
+title_format = "{cwd}"
+
+[preview]
+wrap = "no"
+tab_size = 3
+max_width = 600
+max_height = 900
+cache_dir = ""
+image_delay = 30
+image_filter = "triangle"
+image_quality = 75
+sixel_fraction = 15                       # Render resolution of sixel images
+image = true                              # Enable image previews
+backend = "wezterm"                       # Use WezTerm graphics protocol (or "kitty")
+text = true  # Enable text/code previews
+#syntect_theme = "~/.config/yazi/syntax/Catppuccin Mocha.tmTheme"  # Syntax highlighting
+
+[opener]
+# Text editor
+edit = [
+    { run = 'nvim "$@"', block = true, for = "unix" },  # Linux/MacOS
+    { run = 'nvim.exe %*', block = true, for = "windows" }  # Windows
+]
+
+#Image viewer
+image = [
+    { run = 'feh --auto-zoom --scale-down "$@"', orphan = true, for = "unix"}
+]
+
+# PDF viewer
+pdf = [
+    { run = 'zathura "$@"', orphan = true, for = "unix" }
+]
+
+# Media player
+play = [
+    { run = 'mpv "$@"', orphan = true, for = "unix" },
+    { run = 'mpv.exe %*', orphan = true, for = "windows" }
+]
+
+[open]
+rules = [
+    # Text files to nvim
+    { mime = "text/*", use = "edit" },
+    { name = "*.md",   use = "edit" },
+
+    # Image files to feh
+    # PDF files to Zathura
+    { name = "*.pdf",  use = "pdf" },
+
+    # Video/audio to MPV
+    { mime = "video/*", use = "play" },
+    { mime = "audio/*", use = "play" },
+
+    # Fallback to default system opener
+    { name = "*", use = "open" }
+]
+
+[tasks]
+micro_workers = 6  # Moderate concurrency for small tasks
+macro_workers = 4  # Limit heavier tasks to avoid CPU spikes
+bizarre_retry = 2  # Retry unusual failures twice
+image_alloc = 268435456  # 256 mb per image, prevents hogging memory
+image_bound = [0, 0]  # Unlimited dimensions but constrained by max_width/height
+suppress_preload = false  # preload tasks created by the system will not be excluded
