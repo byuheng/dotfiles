@@ -24,11 +24,19 @@ return {
       },
     },
 
+    -- Attachments outside the vault
+    attachments = {
+      img_folder = vim.fn.expand '~/Pictures/attachments',  -- root folder for all attachments
+      link_style = 'markdown',  -- or 'wiki', based on preference
+    },
+
     -- Turn off deprecation warnings and use newer command names
     legacy_commands = false,
 
     -- Disable frontmatter if you don't want auto-generated YAML
-    disable_frontmatter = true,
+    frontmatter = {
+      enabled = false
+    },
 
     -- Template configuration
     templates = {
