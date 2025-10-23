@@ -3,7 +3,7 @@
  * Maintainer: joekamprad [joekamprad //a_t// endeavouros.com]
  *******************************************************/
 configuration {
-    font:            "AtkinsonHyperlegibleNext 10";
+    font:            "Noto Sans Regular 10";
     show-icons:      false;
     icon-theme:      "Qogir";
     scroll-method:   0;
