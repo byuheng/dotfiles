@@ -2,19 +2,26 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 config = {
+	max_fps = 144,
+	animation_fps = 60,
+	front_end = "OpenGL",
+	scrollback_lines = 10000,
 	automatically_reload_config = true,
 	enable_tab_bar = false,
 	window_close_confirmation = "NeverPrompt",
 	adjust_window_size_when_changing_font_size = false,
 	window_decorations = "RESIZE",
 	check_for_updates = false,
-	font = wezterm.font("JetBrainsMono Nerd Font"),
+	font = wezterm.font_with_fallback({
+		"JetBrainsMono Nerd Font Mono",
+		"Symbols Nerd Font",
+	}),
 	font_size = 12,
 	window_padding = {
-		left = 3,
-		right = 3,
-		top = 0,
-		bottom = 0,
+		left = 5,
+		right = 5,
+		top = 2,
+		bottom = 2,
 	},
 	color_scheme = "gruvbox_material_dark_hard",
 	color_schemes = {
