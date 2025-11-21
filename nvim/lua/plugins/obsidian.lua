@@ -26,8 +26,11 @@ return {
 
     -- Attachments outside the vault
     attachments = {
-      img_folder = vim.fn.expand '~/Pictures/attachments',  -- root folder for all attachments
-      link_style = 'markdown',  -- or 'wiki', based on preference
+      img_folder = vim.fn.expand '~/Pictures/attachments/images', -- root folder for all attachments
+      pdf_folder = vim.fn.expand '~/Pictures/attachments/pdfs',
+      video_folder = vim.fn.expand '~/Pictures/attachments/videos',
+      audio_folder = vim.fn.expand '~/Pictures/attachments/audio',
+      link_style = 'markdown', -- or 'wiki', based on preference
     },
 
     -- Turn off deprecation warnings and use newer command names
@@ -35,7 +38,7 @@ return {
 
     -- Disable frontmatter if you don't want auto-generated YAML
     frontmatter = {
-      enabled = false
+      enabled = false,
     },
 
     -- Template configuration
