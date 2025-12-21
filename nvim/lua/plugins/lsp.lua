@@ -220,6 +220,8 @@ return {
         'typescript-language-server',
         'json-lsp',
         'clangd',
+        'clang-format',
+        'codelldb',
         'sqlls',
         'terraform-ls',
         'yaml-language-server',
