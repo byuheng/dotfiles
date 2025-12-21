@@ -27,6 +27,22 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz', opts)
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 
+-- Native gx replacement for nvim v0.11+
+-- Uses vim.ui.open for URLs, PDFs, and system files
+
+-- Normal mode: open file or link under cursor
+vim.keymap.set('n', 'gx', function()
+  vim.ui.open(vim.fn.expand '<cfile>')
+end, { desc = 'Open with system default' })
+
+-- Visual Mode: dpen current selection
+vim.keymap.set('v', 'gx', function()
+  local pos1 = vim.fn.getpos 'v'
+  local pos2 = vim.fn.getpos '.'
+  local lines = vim.fn.getregion(pos1, pos2, { type = vim.fn.mode() })
+  vim.ui.open(table.concat(lines))
+end, { desc = 'Open selection with system default' })
+
 -- File operations --
 
 -- Save file
