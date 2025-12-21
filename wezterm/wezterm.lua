@@ -5,6 +5,7 @@ config = {
 	max_fps = 144,
 	animation_fps = 60,
 	front_end = "OpenGL",
+	enable_wayland = false,
 	scrollback_lines = 10000,
 	automatically_reload_config = true,
 	enable_tab_bar = false,
@@ -13,7 +14,7 @@ config = {
 	window_decorations = "RESIZE",
 	check_for_updates = false,
 	font = wezterm.font_with_fallback({
-		"JetBrainsMono Nerd Font Mono",
+		"JetBrains Mono Nerd Font",
 		"Symbols Nerd Font",
 	}),
 	font_size = 12,
