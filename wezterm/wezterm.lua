@@ -19,10 +19,10 @@ config = {
 	}),
 	font_size = 12,
 	window_padding = {
-		left = 2,
-		right = 2,
-		top = 0,
-		bottom = 0,
+		left = 4,
+		right = 4,
+		top = 2,
+		bottom = 2,
 	},
 	color_scheme = "gruvbox_material_dark_hard",
 	color_schemes = {
