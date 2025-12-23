@@ -92,19 +92,29 @@ return {
       --   callback = function()
       --     -- Gruvbox-material hard colors
       --     local colors = {
-      --       bg0_hard = '#1d2021',
-      --       bg1 = '#3c3836',
-      --       bg2 = '#504945',
-      --       fg0 = '#fbf1c7',
-      --       fg1 = '#ebdbb2',
-      --       red = '#ea6962',
-      --       green = '#a9b665',
-      --       yellow = '#d8a657',
-      --       blue = '#7daea3',
-      --       purple = '#d3869b',
-      --       aqua = '#89b482',
-      --       orange = '#e78a4e',
-      --       gray = '#928374',
+      --       bg_dim = '#141617',
+      --       bg0 = '#1D2021',
+      --       bg1 = '#282828',
+      --       bg2 = '#282828',
+      --       bg3 = '#3C3836',
+      --       bg4 = '#3C3836',
+      --       bg5 = '#504945',
+      --       bg_statusline1 = '#282828',
+      --       bg_statusline2 = '#32302F',
+      --       bg_statusline3 = '#504945',
+      --       bg_current_word = '#32302F',
+      --       fg0 = '#D4BE98',
+      --       fg1 = '#DDC7A1',
+      --       red = '#EA6962',
+      --       green = '#A9C665',
+      --       yellow = '#D8A657',
+      --       blue = '#7DAEA3',
+      --       purple = '#D3869B',
+      --       orange = '#E78A4E',
+      --       aqua = '#89B482',
+      --       grey0 = '#7C6F64',
+      --       grey1 = '#928374',
+      --       grey2 = '#A89984'
       --     }
       --
       --     -- Completion menu background and borders
