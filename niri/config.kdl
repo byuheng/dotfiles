@@ -190,7 +190,7 @@ binds {
         focus-ring {
             width 2
             active-color "#A89984"
-            inactive-color "#282828"
+            inactive-color "#141617"
         }
 
         tab-indicator {
@@ -199,8 +199,8 @@ binds {
             gap 0
             //gaps-between-tabs 1
             //place-within-column
-            active-color "#928374"
-            inactive-color "#504945"
+            active-color "#A89984"
+            inactive-color "#3C3836"
         }
 
         // shadow {
