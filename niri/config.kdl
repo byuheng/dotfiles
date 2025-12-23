@@ -128,21 +128,23 @@ binds {
 
     MOD+TAB                             { focus-workspace-previous; }
 
-    // ─── Layout Controls ───
+    // ─── Modes ───
     MOD+SPACE                           { toggle-window-floating; }
     MOD+F                               { expand-column-to-available-width; } // maximize screen
     MOD+SHIFT+F                         { fullscreen-window; }                // Fullscreen
     MOD+C                               { center-column; }
     MOD+SHIFT+C                         { center-visible-columns; }
+
+    // ─── Resize ───
     MOD+MINUS                           { set-column-width "-10%"; }
     MOD+EQUAL                           { set-column-width "+10%"; }
     MOD+SHIFT+MINUS                     { set-window-height "-10%"; }
     MOD+SHIFT+EQUAL                     { set-window-height "+10%"; }
 
-    // ─── Tabbed Windows ───
+    // ─── Tabbed Columns ───
     MOD+T                               { toggle-column-tabbed-display; }
-    MOD+BRACKETLEFT                     { consume-or-expel-window-left; }
-    MOD+BRACKETRIGHT                    { consume-or-expel-window-right; }
+    MOD+COMMA                           { consume-window-into-column; }
+    MOD+PERIOD                          { expel-window-from-column; }
 
     // ─── Screenshots ───
     PRINT                               { screenshot; }         // Selection
