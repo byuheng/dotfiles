@@ -189,7 +189,17 @@ binds {
 
         focus-ring {
             width 2
-            active-color "#89b482"
+            active-color "#E78A4E"
+            inactive-color "#504945"
+        }
+
+        tab-indicator {
+            on
+            width 8
+            gap 0
+            //gaps-between-tabs 1
+            //place-within-column
+            active-color "#7DAEA3"
             inactive-color "#504945"
         }
 
@@ -200,7 +210,7 @@ binds {
         //     color "#0007"
         // }
 
-        //struts {}
+        struts {}
     }
 
 // ────────────── Animation Settings ──────────────
