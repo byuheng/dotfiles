@@ -32,8 +32,8 @@ config = {
 			cursor_bg = "#D4BE98",
 			cursor_border = "#D4BE98",
 			cursor_fg = "#1D2021",
-			selection_bg = "#D4BE98",
-			selection_fg = "#3C3836",
+			selection_bg = "#3C3836",
+			selection_fg = "#DDC7A1",
 
 			ansi = {
 				"#1d2021",
@@ -46,14 +46,14 @@ config = {
 				"#d4be98",
 			},
 			brights = {
-				"#eddeb5",
+				"#928374",
 				"#ea6962",
 				"#a9b665",
 				"#d8a657",
 				"#7daea3",
 				"#d3869b",
 				"#89b482",
-				"#d4be98",
+				"#DDC7A1",
 			},
 		},
 	},
