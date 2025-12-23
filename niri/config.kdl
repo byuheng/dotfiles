@@ -38,9 +38,10 @@ binds {
     MOD+SHIFT+ESCAPE                     { show-hotkey-overlay; }
 
     // ─── Applications ───
-    MOD+RETURN                          hotkey-overlay-title="Open Terminal: wezterm" { spawn-sh "wezterm"; }
-    MOD+D                               hotkey-overlay-title="Open App Launcher: wofi" { spawn-sh "wofi"; }
-    MOD+B                               hotkey-overlay-title="Open Browser: zen-browser" { spawn-sh "zen-browser"; }
+    MOD+RETURN                          hotkey-overlay-title="Launch WezTerm" { spawn "wezterm"; }
+    MOD+D                               hotkey-overlay-title="Launch Wofi" { spawn-sh "wofi"; }
+    MOD+B                               hotkey-overlay-title="Launch Zen Browser" { spawn "zen-browser"; }
+    MOD+M                               hotkey-overlay-title="Launch Discord" { spawn "discord"; }
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen: swaylock" { spawn-sh "swaylock"; }
     
     // Please choose your own file manager
@@ -60,7 +61,6 @@ binds {
 
     // ─── Window Movement and Focus ───
     MOD+Q                               { close-window; }
-
     MOD+LEFT                            { focus-column-left; }
     MOD+H                               { focus-column-left; }
     MOD+RIGHT                           { focus-column-right; }
@@ -189,7 +189,7 @@ binds {
 
         focus-ring {
             width 2
-            active-color "#E78A4E"
+            active-color "#D8A657"
             inactive-color "#504945"
         }
 
@@ -199,7 +199,7 @@ binds {
             gap 0
             //gaps-between-tabs 1
             //place-within-column
-            active-color "#7DAEA3"
+            active-color "#89B482"
             inactive-color "#504945"
         }
 
