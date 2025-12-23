@@ -80,8 +80,8 @@ return {
         list_items = {
           enable = true,
           wrap = true,
-          indent_size = 4,
-          shift_width = 4,
+          indent_size = 2,
+          shift_width = 2,
 
           marker_minus = {
             add_padding = true,
