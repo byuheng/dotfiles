@@ -38,7 +38,7 @@ binds {
     MOD+SHIFT+ESCAPE                     { show-hotkey-overlay; }
 
     // ─── Applications ───
-    MOD+RETURN                          hotkey-overlay-title="Launch WezTerm" { spawn "wezterm"; }
+    MOD+RETURN                          hotkey-overlay-title="Launch Alacrity" { spawn-sh "alacrity"; }
     MOD+D                               hotkey-overlay-title="Launch Wofi" { spawn-sh "wofi"; }
     MOD+B                               hotkey-overlay-title="Launch Zen Browser" { spawn "zen-browser"; }
     MOD+M                               hotkey-overlay-title="Launch Discord" { spawn "discord"; }
@@ -165,7 +165,6 @@ binds {
 // ────────────── Startup Applications ──────────────
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#spawn-sh-at-startup
 
-    spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP" "XDG_SESSION_TYPE"
     spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &" // Polkit
     spawn-sh-at-startup "swww-daemon &" // Wallpaper daemon
     spawn-sh-at-startup "sleep 1 && swww img /home/byu/Pictures/wallpapers/one_piece_luffy_going_merry_dark_wallpaper.jpg" // Set wallpaper
@@ -278,15 +277,13 @@ binds {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#environment
 
     environment {
-        //DISPLAY ":1"
+        DISPLAY ":1"
         ELECTRON_OZONE_PLATFORM_HINT "auto"
         QT_QPA_PLATFORM "wayland"
         QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
         XDG_SESSION_TYPE "wayland"
         XDG_CURRENT_DESKTOP "niri"
 
-        // Helps apps find the Wayland socket
-        GDK_BACKEND "wayland,x11"
     }
     
     hotkey-overlay {
