@@ -203,6 +203,8 @@ binds {
             inactive-color "#3C3836"
         }
 
+        //background-color "transparent"
+
         // shadow {
         //     softness 30
         //     spread 5
@@ -262,16 +264,16 @@ binds {
     // }
     
     // Active window
-    window-rule {
-        match is-active=true
-        opacity 0.95
-    }
-
-    // Inactive window
-    window-rule {
-        match is-active=false
-        opacity 0.85
-    }
+    // window-rule {
+    //     match is-active=true
+    //     opacity 0.95
+    // }
+    //
+    // // Inactive window
+    // window-rule {
+    //     match is-active=false
+    //     opacity 0.85
+    // }
 
 // ────────────── Environment Variables ──────────────
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#environment
