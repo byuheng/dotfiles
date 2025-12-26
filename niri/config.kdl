@@ -38,7 +38,7 @@ binds {
     MOD+SHIFT+ESCAPE                     { show-hotkey-overlay; }
 
     // ─── Applications ───
-    MOD+RETURN                          hotkey-overlay-title="Launch Alacrity" { spawn-sh "alacrity"; }
+    MOD+RETURN                          hotkey-overlay-title="Launch foot" { spawn-sh "foot"; }
     MOD+D                               hotkey-overlay-title="Launch Wofi" { spawn-sh "wofi"; }
     MOD+B                               hotkey-overlay-title="Launch Zen Browser" { spawn "zen-browser"; }
     MOD+M                               hotkey-overlay-title="Launch Discord" { spawn "discord"; }
