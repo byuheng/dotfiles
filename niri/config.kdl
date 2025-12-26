@@ -29,6 +29,7 @@ input {
 output "DP-3" {
     mode "1920x1080@239.760" // Set resolution and refresh rate
     scale 1 // No scaling (use 2 for HiDPI)
+    //variable-refresh-rate
 }
 
 // ────────────── Keybindings ──────────────
@@ -263,17 +264,17 @@ binds {
     //     clip-to-geometry true
     // }
     
-    // Active window
-    // window-rule {
-    //     match is-active=true
-    //     opacity 0.95
-    // }
-    //
-    // // Inactive window
-    // window-rule {
-    //     match is-active=false
-    //     opacity 0.85
-    // }
+    //Active window
+    window-rule {
+        match is-active=true
+        opacity 0.95
+    }
+
+    // Inactive window
+    window-rule {
+        match is-active=false
+        opacity 0.85
+    }
 
 // ────────────── Environment Variables ──────────────
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#environment
