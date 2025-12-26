@@ -161,29 +161,12 @@ return {
           },
         },
       },
-      pyright = {},
+      basedpyright = {},
       ruff = {},
-      --pylsp = {
-      --  settings = {
-      --    pylsp = {
-      --      plugins = {
-      --        pyflakes = { enabled = false },
-      --        pycodestyle = { enabled = false },
-      --        autopep8 = { enabled = false },
-      --        yapf = { enabled = false },
-      --        mccabe = { enabled = false },
-      --       pylsp_mypy = { enabled = false },
-      --        pylsp_black = { enabled = false },
-      --        pylsp_isort = { enabled = false },
-      --      },
-      --    },
-      --  },
-      --},
-      tsserver = {},
+      ts_ls = {},
       jsonls = {},
       clangd = {},
       sqlls = {},
-      terraformls = {},
       yamlls = {},
       bashls = {},
       dockerls = {},
@@ -192,7 +175,6 @@ return {
       cssls = {},
       marksman = {},
       ltex = {
-        cmd = { '~/.local/share/nvim/mason/bin/ltex-ls' },
         filetypes = { 'markdown', 'tex', 'bib', 'org', 'plaintex' },
         settings = {
           ltex = {
@@ -215,7 +197,7 @@ return {
     })
     require('mason-tool-installer').setup {
       ensure_installed = {
-        'pyright',
+        'basedpyright',
         'ruff',
         'typescript-language-server',
         'json-lsp',
@@ -223,7 +205,6 @@ return {
         'clang-format',
         'codelldb',
         'sqlls',
-        'terraform-ls',
         'yaml-language-server',
         'bash-language-server',
         'dockerfile-language-server',
@@ -232,6 +213,9 @@ return {
         'css-lsp',
         'marksman',
         'ltex-ls',
+        'shfmt',
+        'prettier',
+        'stylua',
       },
     }
 
