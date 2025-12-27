@@ -25,8 +25,7 @@
     },
     "rewrite": {
       "Zen Browser": "Zen",
-      "Foot Server": "Terminal",
-      "yazi": "Yazi"
+      "Foot Server": "Terminal"
     }
   },
   // niri Window
@@ -34,7 +33,6 @@
     "format": "{}",
     "rewrite": {
       "(.*) - nvim": "$1",
-      "(.*) - Yazi": "$1",
       "(.*) - Zen Browser": "$1",
       "(.*) - Brave": "$1",
       "(.*) - Chromium": "$1",
@@ -140,13 +138,7 @@
     "format-alt": "{icon}  {time}",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
-    "format-icons": [
-      " ",
-      " ",
-      " ",
-      " ",
-      " "
-    ]
+    "format-icons": [" ", " ", " ", " ", " "]
   },
   // Pulseaudio
   "pulseaudio": {
