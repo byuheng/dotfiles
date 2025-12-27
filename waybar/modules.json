@@ -6,8 +6,8 @@
   // Taskbar
   "wlr/taskbar": {
     "format": "{icon}",
-    "icon-size": 15,
     "swap-icon-label": false,
+    "icon-size": 15,
     "tooltip-format": "{title}",
     "on-click": "activate",
     "on-click-middle": "close",
@@ -99,21 +99,24 @@
   "cpu": {
     "interval": 2,
     "format": "  {usage}%",
+    "swap-icon-label": false,
     "tooltip": false
   },
   // TEMPERATURE
   "temperature": {
-    "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+    "hwmon-path": "/sys/class/hwmon/hwmon1/temp3_input",
     "interval": 2,
     "critical-threshold": 80,
     "format": " {temperatureC}°C",
     "format-critical": " {temperatureC}°C",
+    "swap-icon-label": false,
     "tooltip": false
   },
   // MEMORY
   "memory": {
     "interval": 5,
     "format": "  {}%",
+    "swap-icon-label": false,
     "tooltip-format": "{used:0.1f}G/{total:0.1f}G"
   },
   // Clock
@@ -139,18 +142,13 @@
     "format-alt": "{icon}  {time}",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
-    "format-icons": [
-      " ",
-      " ",
-      " ",
-      " ",
-      " "
-    ]
+    "format-icons": [" ", " ", " ", " ", " "]
   },
   // Pulseaudio
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
     "format": "{icon}  {volume}%",
+    "swap-icon-label": false,
     "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-bluetooth-muted": " {icon} {format_source}",
     "format-muted": " {format_source}",
@@ -177,6 +175,7 @@
   // backlight:
   "backlight": {
     "format": "{icon} {percent}%",
+    "swap-icon-label": false,
     "format-icons": [
       "",
       "",
