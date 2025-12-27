@@ -174,20 +174,6 @@ return {
       html = {},
       cssls = {},
       marksman = {},
-      ltex = {
-        filetypes = { 'markdown', 'tex', 'bib', 'org', 'plaintex' },
-        settings = {
-          ltex = {
-            enabled = { 'markdown', 'tex', 'bib', 'org', 'plaintex' },
-          },
-        },
-        -- Add this to set JAVA_HOME inside Neovim for this LSP
-        on_new_config = function(new_config, _)
-          new_config.cmd_env = vim.tbl_extend('force', new_config.cmd_env or {}, {
-            JAVA_HOME = '/usr/lib/jvm/default',
-          })
-        end,
-      },
     }
 
     -- Ensure the servers and tools above are installed
@@ -212,10 +198,10 @@ return {
         'html-lsp',
         'css-lsp',
         'marksman',
-        'ltex-ls',
         'shfmt',
         'prettier',
         'stylua',
+        'shellcheck',
       },
     }
 
