@@ -1,0 +1,171 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", "Fira Sans Semibold", "Font Awesome 6 Free", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: #1D2021;
+    color: #D4BE98;            /* Added */
+    font-size: 13px;
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0;
+    min-height: 0;
+}
+
+/* Left-most: Arch icon */
+#custom-appmenu {
+  font-size: 14px;
+  background-image: url('/usr/share/icons/cachyos.svg');
+  background-color: #32302F;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 0px 12px;
+    
+}
+
+/* Right-most: Clock */
+#clock {
+    font-size: 13px;
+    background-color: #32302F;
+    color: #D4BE98;
+    border-radius: 0px;
+    padding: 0px 8px;
+}
+
+/* Active window title */
+#window {
+    font-size: 13px;
+    font-weight: 800;
+    color: #89B482;
+    border-radius: 0px;
+    padding: 0px 12px;
+    background-color: #1D2021;
+}
+
+/* Workspace container */
+#workspaces,
+#niri-workspaces {
+    background: #282828;
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Individual workspace buttons */
+#workspaces button,
+#niri-workspaces button {
+    border-radius: 0px;
+    font-size: 13px;
+    font-weight: 800;
+    color: #D4BE98;
+    padding: 0px 8px;
+    background: transparent;
+}
+
+#workspaces button.focused,
+#workspaces button.active,
+#niri-workspaces button.focused,
+#niri-workspaces button.active {
+    color: #A9B665;
+    background: #32302F;
+}
+
+#workspaces button:hover,
+#niri-workspaces button:hover {
+    background: #504945;
+    color: #D4BE98;
+}
+
+/* Power/exit button */
+#custom-exit {
+    background-color: #EA6962;
+    font-size: 13px;
+    font-weight: 800;
+    color: #1D2021;
+    padding: 0px 8px;
+    margin: 0px;
+}
+
+/* Tooltips */
+tooltip {
+    border-radius: 12px;
+    background-color: #282828;
+    color: #D4BE98;
+    padding: 4px 8px;
+}
+
+/* Taskbar */
+#taskbar {
+    background-color: #282828;
+    margin: 0px;
+    border-radius: 0px;
+    font-weight: normal;
+}
+
+#taskbar button {
+    min-height: 0;
+    padding: 0px 4px;
+    margin: 0px;
+}
+
+#taskbar button.active, #taskbar button.minimized {
+    padding: 0px 4px;
+}
+
+/* All system info modules */
+#cpu,
+#temperature,
+#memory,
+#backlight,
+#pulseaudio,
+#network,
+#bluetooth,
+#battery,
+#tray,
+#custom-updates,
+#custom-notification {
+    background-color: #282828;
+    font-size: 13px;
+    font-weight: 800;
+    color: #D4BE98;
+    border-radius: 0px;
+    padding: 0px 10px;
+}
+
+/* Make CPU turn orange if it's working hard (>80%) */
+#cpu.warning {
+    color: #E78A4E;
+}
+
+/* Temperature */
+#temperature {
+    background-color: #282828;
+    color: #D4BE98;
+    padding: 0px 10px;
+}
+
+/* Temperature critical */
+#temperature.critical {
+    color: #EA6962;
+}
+
+/* Make RAM turn red if it's almost full (>90%) */
+#memory.critical {
+    color: #EA6962;
+}
+
+/* Battery critical warning */
+#battery.critical:not(.charging) {
+    background-color: #EA6962;
+    color: #1D2021;
+    animation: blink 0.5s linear infinite alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: #1D2021;
+        color: #EA6962;
+    }
+}
