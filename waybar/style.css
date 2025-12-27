@@ -17,12 +17,22 @@ window#waybar {
 #custom-appmenu {
   font-size: 14px;
   background-image: url('/usr/share/icons/cachyos.svg');
-  background-color: #32302F;
+  background-color: #1D2021;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  padding: 0px 12px;
+  padding: 0px 8px;
     
+}
+
+#custom-appmenuicon {
+    font-size: 14px;
+    color: #1793d1;
+    background-color: #32302F;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 0px 8px;
 }
 
 /* Right-most: Clock */
