@@ -97,13 +97,14 @@
   },
   // CPU
   "cpu": {
-    "interval": 10,
+    "interval": 2,
     "format": "  {usage}%",
     "tooltip": false
   },
   // TEMPERATURE
   "temperature": {
     "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+    "interval": 2,
     "critical-threshold": 80,
     "format": " {temperatureC}°C",
     "format-critical": " {temperatureC}°C",
@@ -111,7 +112,7 @@
   },
   // MEMORY
   "memory": {
-    "interval": 30,
+    "interval": 5,
     "format": "  {}%",
     "tooltip-format": "{used:0.1f}G/{total:0.1f}G"
   },
@@ -138,7 +139,13 @@
     "format-alt": "{icon}  {time}",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
-    "format-icons": [" ", " ", " ", " ", " "]
+    "format-icons": [
+      " ",
+      " ",
+      " ",
+      " ",
+      " "
+    ]
   },
   // Pulseaudio
   "pulseaudio": {
