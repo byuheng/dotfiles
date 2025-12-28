@@ -132,8 +132,8 @@ binds {
     // ─── Modes ───
     MOD+SHIFT+SPACE                     { toggle-window-floating; }
     MOD+SPACE                           { switch-focus-between-floating-and-tiling; }
-    MOD+F                               { expand-column-to-available-width; } // maximize screen
-    MOD+SHIFT+F                         { fullscreen-window; }                // Fullscreen
+    MOD+F                               { maximize-column; }                          // maximize screen
+    MOD+SHIFT+F                         { fullscreen-window; }                        // Fullscreen
     MOD+C                               { center-column; }
     MOD+SHIFT+C                         { center-visible-columns; }
 
