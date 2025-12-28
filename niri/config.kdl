@@ -42,7 +42,7 @@ binds {
     MOD+RETURN                          hotkey-overlay-title="Launch foot" { spawn-sh "foot"; }
     MOD+D                               hotkey-overlay-title="Launch Wofi" { spawn-sh "wofi"; }
     MOD+B                               hotkey-overlay-title="Launch Zen Browser" { spawn "zen-browser"; }
-    MOD+M                               hotkey-overlay-title="Launch Discord" { spawn "discord"; }
+    MOD+M                               hotkey-overlay-title="Launch vesktop" { spawn "vesktop"; }
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen: swaylock" { spawn-sh "swaylock"; }
     
     // Please choose your own file manager
@@ -130,7 +130,8 @@ binds {
     MOD+TAB                             { focus-workspace-previous; }
 
     // ─── Modes ───
-    MOD+SPACE                           { toggle-window-floating; }
+    MOD+SHIFT+SPACE                     { toggle-window-floating; }
+    MOD+SPACE                           { switch-focus-between-floating-and-tiling; }
     MOD+F                               { expand-column-to-available-width; } // maximize screen
     MOD+SHIFT+F                         { fullscreen-window; }                // Fullscreen
     MOD+C                               { center-column; }
