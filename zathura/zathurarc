@@ -1,0 +1,38 @@
+# --- Behavior & Navigation ---
+set selection-clipboard "clipboard"  # Syncs with system clipboard (Ctrl+V)
+set scroll-step 60                   # Pixels per scroll (higher = faster)
+set smooth-scroll true               # Enables smooth scrolling transitions
+set adjust-open "width"              # Fits PDF to Niri column width on open
+set render-loading "false"           # Prevents white flash when turning pages
+set scroll-full-render "true"        # Renders whole page to prevent flicker
+set dbus-service "true"              # Allows other apps to control Zathura
+
+# --- Interface Cleanup ---
+set guioptions "s"                   # Hides all GUI elements (scrollbars, etc.)
+set statusbar-h-padding 10           # Horizontal padding for status bar
+set statusbar-v-padding 10           # Vertical padding for status bar
+set statusbar-basename false         # Shows full path in the status bar
+set statusbar-home-tilde true        # Uses ~ instead of /home/user in status bar
+set window-title-basename false      # Shows only the filename, not full path
+set window-title-home-tilde true     # Uses ~ instead of /home/user in title
+
+# --- Keybindings ---
+map q none                           # Disable 'q' to quit
+map r reload                         # [r] Reload the document
+map R rotate                         # [R] Rotate the page
+map D toggle_page_mode               # [V] Toggle dual-page view
+map i recolor                        # [D] Toggle Dark Mode (Recolor)
+
+# --- Gruvbox Material Dark Hard Theme ---
+set recolor "true"                   # Turn on color inversion engine
+set recolor-keephue "true"           # Keep image colors natural in dark mode
+set recolor-lightcolor "#1d2021"     # Page Background (Gruvbox Hard Dark)
+set recolor-darkcolor  "#d4be98"     # Text Foreground (Gruvbox Material Cream)
+set default-bg         "#1d2021"     # Window Background
+set default-fg         "#d4be98"     # Default UI Text
+set statusbar-bg       "#32302f"     # Status Bar Background
+set statusbar-fg       "#d4be98"     # Status Bar Text
+set inputbar-bg        "#1d2021"     # Match bg
+set inputbar-fg        "#d4be98"     # Match fg
+set highlight-color    "#89b482"     # Search Highlight (Gruvbox Green)
+set highlight-active-color "#7daea3" # Active Search Result (Gruvbox Blue)
