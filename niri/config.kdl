@@ -42,7 +42,7 @@ binds {
     MOD+RETURN                          hotkey-overlay-title="Launch foot" { spawn-sh "foot"; }
     MOD+D                               hotkey-overlay-title="Launch Wofi" { spawn-sh "wofi"; }
     MOD+B                               hotkey-overlay-title="Launch Zen Browser" { spawn "zen-browser"; }
-    MOD+M                               hotkey-overlay-title="Launch vesktop" { spawn "vesktop"; }
+    MOD+V                               hotkey-overlay-title="Launch vesktop" { spawn "vesktop"; }
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen: swaylock" { spawn-sh "swaylock"; }
     
     // Please choose your own file manager
