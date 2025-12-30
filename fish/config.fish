@@ -54,6 +54,14 @@ set --erase --universal fish_key_bindings
 set -g pure_enable_single_line_prompt false
 set -g pure_show_user_host false
 
+# Pure Git colors
+set -g pure_color_git_branch 3c3836
+set -g pure_color_git_dirty ea6962
+set -g pure_color_git_stash d8a657
+set -g pure_color_git_unpulled_commits 89b482
+set -g pure_color_git_unpushed_commits 89b482
+
+
 # mpv + ytdl: high-quality audio-only premium YT music via Zen/Firefox symlink
 # Usage: music "URL" or music "ytsearch:Song Name"
 
