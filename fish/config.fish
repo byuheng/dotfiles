@@ -1,5 +1,10 @@
 source /usr/share/cachyos-fish-config/cachyos-config.fish
 
+#Ensure system-installed fisher is loaded
+if not functions -q fisher
+    source /usr/share/fish/vendor_functions.d/fisher.fish
+end
+
 # overwrite greeting
 # potentially disabling fastfetch
 function fish_greeting
@@ -44,6 +49,10 @@ set --global fish_pager_color_selected_description
 set --global fish_pager_color_selected_prefix
 
 set --erase --universal fish_key_bindings
+
+# Pure
+set -g pure_enable_single_line_prompt false
+set -g pure_show_user_host false
 
 # mpv + ytdl: high-quality audio-only premium YT music via Zen/Firefox symlink
 # Usage: music "URL" or music "ytsearch:Song Name"
