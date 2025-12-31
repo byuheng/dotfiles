@@ -55,7 +55,7 @@ set -g pure_enable_single_line_prompt false
 set -g pure_show_user_host false
 
 # Pure Git colors
-set -g pure_color_git_branch 3c3836
+set -g pure_color_git_branch 504945
 set -g pure_color_git_dirty ea6962
 set -g pure_color_git_stash d8a657
 set -g pure_color_git_unpulled_commits 89b482
