@@ -1,0 +1,28 @@
+# --- Fish shell ---
+# Ignore machine-specific fish state
+fish/fish_variables
+# Transient history/state
+fish/fish_history
+
+# --- Neovim ---
+# Compiled spell files (binary) and undo history
+nvim/spell/*.spl
+nvim/spell/*.sug
+nvim/undo/
+# Ignore generic lock files 
+nvim/*.lock
+# KEEP the lazy-lock snapshot!
+!nvim/lazy-lock.json
+
+# --- File managers & tools ---
+# Backup files created by yazi 
+yazi/yazi.toml-*
+# Temporary/Swp files
+*.swp
+*.swo
+*~
+
+# --- System/global junk ---
+.DS_Store
+Thumbs.db
+
