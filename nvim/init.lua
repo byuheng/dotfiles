@@ -47,6 +47,7 @@ require('lazy').setup {
   require 'plugins.neotree',
   require 'plugins.none_ls', -- Autoformatter
   require 'plugins.oil',
+  require 'plugins.smear_cursor',
   require 'plugins.obsidian',
   require 'plugins.surround',
   require 'plugins.telescope',
