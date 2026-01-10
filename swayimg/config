@@ -1,0 +1,17 @@
+[general]
+mode = window
+
+[viewer]
+window = #000000
+info = no
+antialiasing = yes
+
+[font]
+name = JetBrainsMono Nerd Font Mono
+size = 12
+color = #D4BE98
+
+[gallery]
+window = #000000
+select = #A9B665
+size = 200
