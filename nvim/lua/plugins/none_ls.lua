@@ -45,7 +45,13 @@ return {
             group = augroup,
             buffer = bufnr,
             callback = function()
-              vim.lsp.buf.format { async = false }
+              vim.lsp.buf.format {
+                bufnr = bufnr,
+                filter = function(c)
+                  return c.name == 'null-ls' -- 'c = client' represents each active LSP client being checked
+                end,
+                async = false,
+              }
             end,
           })
         end
