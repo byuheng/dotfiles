@@ -26,7 +26,7 @@ image_filter = "triangle"
 image_quality = 75
 sixel_fraction = 15                       # Render resolution of sixel images
 image = true                              # Enable image previews
-backend = "wezterm"                       # Use WezTerm graphics protocol (or "kitty")
+backend = "sixel"                       
 text = true  # Enable text/code previews
 #syntect_theme = "~/.config/yazi/syntax/Catppuccin Mocha.tmTheme"  # Syntax highlighting
 
@@ -38,8 +38,8 @@ edit = [
 ]
 
 #Image viewer
-image = [
-    { run = 'feh --auto-zoom --scale-down "$@"', orphan = true, for = "unix"}
+view = [
+    { run = 'swayimg "$@"', orphan = true, desc = "swayimg" },
 ]
 
 # PDF viewer
@@ -59,7 +59,9 @@ rules = [
     { mime = "text/*", use = "edit" },
     { name = "*.md",   use = "edit" },
 
-    # Image files to feh
+    # Image files to swayimg
+    { mime = "image/*", use = "view" },
+
     # PDF files to Zathura
     { name = "*.pdf",  use = "pdf" },
 
