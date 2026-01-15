@@ -53,6 +53,17 @@ play = [
     { run = 'mpv.exe %*', orphan = true, for = "windows" }
 ]
 
+# Office/Libre viewer
+office = [
+    { run = 'zaread "$@"', orphan = true, for = "unix", desc = "Zaread" }
+]
+
+# ebook viewer
+ebook = [
+    { run = 'zathura "$@"', orphan = true, desc = "Read in Zathura" },
+    { run = 'calibre "$@"', orphan = true, desc = "Open in Calibre" }
+]
+
 [open]
 rules = [
     # Text files to nvim
@@ -69,6 +80,31 @@ rules = [
     # Video/audio to MPV
     { mime = "video/*", use = "play" },
     { mime = "audio/*", use = "play" },
+
+    # Office files to Zathura
+    { name = "*.docx", use = "office" },
+    { name = "*.pptx", use = "office" },
+    { name = "*.xlsx", use = "office" },
+    { name = "*.doc", use = "office" },
+    { name = "*.ppt", use = "office" },
+    { name = "*.xls", use = "office" },
+    { name = "*.csv", use = "office" }, # For a dedicated terminal tool use VisiData 
+
+    # Libre files to Zathura
+    { name = "*.odt", use = "office" },
+    { name = "*.odp", use = "office" },
+    { name = "*.ods", use = "office" },
+
+    # Office MIME type fallbacks
+    { mime = "application/vnd.onenxmlformate-officedocument*", use = "office" },
+    { mime = "application/msword", use = "office" },
+    { mime = "application/vnds.ms-powerpoint", use = "office" },
+    { mime = "application/vnd.ms-excel", use = "office" },
+
+    # ebook
+    { name = "*.epub", use = "ebook" },
+    { name = "*.mobi", use = "ebook" },
+    { name = "*.azw3", use = "ebook" },
 
     # Fallback to default system opener
     { name = "*", use = "open" }
