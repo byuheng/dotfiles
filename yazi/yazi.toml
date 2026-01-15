@@ -64,6 +64,7 @@ rules = [
 
     # PDF files to Zathura
     { name = "*.pdf",  use = "pdf" },
+    { mime = "application/pdf", use = "pdf" },
 
     # Video/audio to MPV
     { mime = "video/*", use = "play" },
