@@ -1,10 +1,7 @@
 # --- Behavior & Navigation ---
 set selection-clipboard clipboard    # Syncs with system clipboard (Ctrl+V)
 set scroll-step 60                   # Pixels per scroll (higher = faster)
-set smooth-scroll true               # Enables smooth scrolling transitions
-set adjust-open width                # Fits PDF to Niri column width on open
 set render-loading false             # Prevents white flash when turning pages
-set scroll-full-render true          # Renders whole page to prevent flicker
 set dbus-service true                # Allows other apps to control Zathura
 
 # --- Interface Cleanup ---
