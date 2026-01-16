@@ -1,119 +1,77 @@
 # ~/.config/yazi/yazi.toml
 
 [mgr]
-ratio = [1, 3, 3]                         # [parent, current, preview] pane ratios
-sort_by = "natural"                        # Human-friendly sorting
-sort_sensitive = false
-sort_reverse = false
-sort_dir_first = true
-sort_translit = true
-linemode = "mtime"                        # check doc for more options or set to "none"
-show_icons = true                          # Show icons for files/folders
-show_hidden = false                         # Show dotfiles
-show_symlink = true
-scrolloff = 5
-mouse_events = [ "click", "scroll" ]
-title_format = "{cwd}"
+ratio = [1, 3, 4]
+sort_by = "natural"
+show_icons = true
+linemode = "mtime"
+scrolloff = 10
 
 [preview]
-wrap = "no"
-tab_size = 3
-max_width = 600
-max_height = 900
-cache_dir = ""
-image_delay = 30
-image_filter = "triangle"
-image_quality = 75
-sixel_fraction = 15                       # Render resolution of sixel images
-image = true                              # Enable image previews
-backend = "sixel"                       
-text = true  # Enable text/code previews
-#syntect_theme = "~/.config/yazi/syntax/Catppuccin Mocha.tmTheme"  # Syntax highlighting
+image = true
+backend = "sixel"
+text = true
+image_quality = 90
+image_filter = "lanczos3"
+max_width = 1280
+max_height = 1024
+image_delay = 0
 
 [opener]
-# Text editor
-edit = [
-    { run = 'nvim "$@"', block = true, for = "unix" },  # Linux/MacOS
-    { run = 'nvim.exe %*', block = true, for = "windows" }  # Windows
-]
-
-#Image viewer
-view = [
-    { run = 'swayimg "$@"', orphan = true, desc = "swayimg" },
-]
-
-# PDF viewer
-pdf = [
-    { run = 'zathura "$@"', orphan = true, for = "unix" }
-]
-
-# Media player
-play = [
-    { run = 'mpv "$@"', orphan = true, for = "unix" },
-    { run = 'mpv.exe %*', orphan = true, for = "windows" }
-]
-
-# Office/Libre viewer
-office = [
-    { run = 'zaread "$@"', orphan = true, for = "unix", desc = "Zaread" }
-]
-
-# ebook viewer
-ebook = [
-    { run = 'zathura "$@"', orphan = true, desc = "Read in Zathura" },
-    { run = 'calibre "$@"', orphan = true, desc = "Open in Calibre" }
-]
+# The 'fish -c' wrapper for environment inheritance
+office_view = [ { run = 'fish -c "zaread %s"', block = true, desc = "Zaread" } ]
+office_edit = [ { run = 'fish -c "libreoffice %s"', orphan = true, desc = "LibreOffice" } ]
+ebook_edit  = [ { run = 'fish -c "calibre %s"', orphan = true, desc = "Calibre" } ]
+edit        = [ { run = 'nvim "%s"', block = true } ]
+view        = [ { run = 'swayimg "%s"', orphan = true } ]
+pdf         = [ { run = 'zathura "%s"', orphan = true } ]
+play        = [ { run = 'mpv "%s"', orphan = true } ]
+open        = [ { run = 'xdg-open "%s"', desc = "Open" } ]
 
 [open]
-rules = [
-    # Text files to nvim
-    { mime = "text/*", use = "edit" },
-    { name = "*.md",   use = "edit" },
+prepend_rules = [
+    # --- Word / Text ---
+    { url = "*.docx", use = [ "office_view", "office_edit" ] },
+    { url = "*.doc",  use = [ "office_view", "office_edit" ] },
+    { url = "*.docm", use = [ "office_view", "office_edit" ] },
+    { url = "*.rtf",  use = [ "office_view", "office_edit" ] },
+    
+    # --- Excel / Spreadsheets ---
+    { url = "*.xlsx", use = [ "office_view", "office_edit" ] },
+    { url = "*.xls",  use = [ "office_view", "office_edit" ] },
+    { url = "*.xlsm", use = [ "office_view", "office_edit" ] },
+    { url = "*.csv",  use = [ "office_view", "office_edit" ] },
+    
+    # --- PowerPoint / Presentations ---
+    { url = "*.pptx", use = [ "office_view", "office_edit" ] },
+    { url = "*.ppt",  use = [ "office_view", "office_edit" ] },
+    { url = "*.pptm", use = [ "office_view", "office_edit" ] },
+    
+    # --- LibreOffice Native ---
+    { url = "*.odt",  use = [ "office_view", "office_edit" ] },
+    { url = "*.ods",  use = [ "office_view", "office_edit" ] },
+    { url = "*.odp",  use = [ "office_view", "office_edit" ] },
+    { url = "*.odg",  use = [ "office_view", "office_edit" ] },
+    
+    # --- E-books ---
+    { url = "*.epub", use = [ "office_view", "ebook_edit" ] },
+    { url = "*.mobi", use = [ "office_view", "ebook_edit" ] },
+    { url = "*.pdf",  use = "pdf" }
+]
 
-    # Image files to swayimg
+append_rules = [
     { mime = "image/*", use = "view" },
-
-    # PDF files to Zathura
-    { name = "*.pdf",  use = "pdf" },
-    { mime = "application/pdf", use = "pdf" },
-
-    # Video/audio to MPV
     { mime = "video/*", use = "play" },
     { mime = "audio/*", use = "play" },
-
-    # Office files to Zathura
-    { name = "*.docx", use = "office" },
-    { name = "*.pptx", use = "office" },
-    { name = "*.xlsx", use = "office" },
-    { name = "*.doc", use = "office" },
-    { name = "*.ppt", use = "office" },
-    { name = "*.xls", use = "office" },
-    { name = "*.csv", use = "office" }, # For a dedicated terminal tool use VisiData 
-
-    # Libre files to Zathura
-    { name = "*.odt", use = "office" },
-    { name = "*.odp", use = "office" },
-    { name = "*.ods", use = "office" },
-
-    # Office MIME type fallbacks
-    { mime = "application/vnd.onenxmlformate-officedocument*", use = "office" },
-    { mime = "application/msword", use = "office" },
-    { mime = "application/vnds.ms-powerpoint", use = "office" },
-    { mime = "application/vnd.ms-excel", use = "office" },
-
-    # ebook
-    { name = "*.epub", use = "ebook" },
-    { name = "*.mobi", use = "ebook" },
-    { name = "*.azw3", use = "ebook" },
-
-    # Fallback to default system opener
-    { name = "*", use = "open" }
+    { url = "*.md",    use = "edit" },
+    { mime = "text/*",  use = "edit" },
+    { url = "*",       use = "open" }
 ]
 
 [tasks]
-micro_workers = 6  # Moderate concurrency for small tasks
-macro_workers = 4  # Limit heavier tasks to avoid CPU spikes
-bizarre_retry = 2  # Retry unusual failures twice
-image_alloc = 268435456  # 256 mb per image, prevents hogging memory
-image_bound = [0, 0]  # Unlimited dimensions but constrained by max_width/height
-suppress_preload = false  # preload tasks created by the system will not be excluded
+micro_workers = 12
+macro_workers = 8
+bizarre_retry = 3
+image_alloc = 536870912
+image_bound = [0, 0]
+suppress_preload = false
