@@ -181,6 +181,8 @@ binds {
 
     layout {
         gaps 8 // Gap between windows
+
+        always-center-single-column
         center-focused-column "never" // Don’t auto-center focused column
 
         preset-column-widths {
