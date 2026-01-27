@@ -138,6 +138,7 @@ binds {
     MOD+SHIFT+C                         { center-visible-columns; }
 
     // ─── Resize ───
+    MOD+R                               { switch-preset-column-width; } 
     MOD+MINUS                           { set-column-width "-10%"; }
     MOD+EQUAL                           { set-column-width "+10%"; }
     MOD+SHIFT+MINUS                     { set-window-height "-10%"; }
