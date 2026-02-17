@@ -50,16 +50,16 @@ return {
       -- Custom substitutions for template variables
       substitutions = {
         -- Current log files
-        curr_monthly_log = (function()
+        curr_monthly_log = function()
           local y = tonumber(os.date '%Y')
           local m = tonumber(os.date '%m')
           return string.format('%04d%02d', y, m) .. '_monthly_log.md'
-        end)(),
+        end,
 
-        curr_future_log = (function()
+        curr_future_log = function()
           local y = tonumber(os.date '%Y')
           return string.format('%04d', y) .. '_future_log.md'
-        end)(),
+        end,
 
         -- Previous log files
         prev_daily_log = function()
