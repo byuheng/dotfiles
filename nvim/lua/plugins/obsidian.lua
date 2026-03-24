@@ -38,7 +38,11 @@ return {
 
     -- Disable frontmatter if you don't want auto-generated YAML
     frontmatter = {
-      enabled = false,
+      enabled = true,
+
+      note_frontmatter_func = function(note)
+        return {}
+      end,
     },
 
     -- Template configuration
