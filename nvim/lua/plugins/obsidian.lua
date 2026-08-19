@@ -26,10 +26,10 @@ return {
 
     -- Attachments outside the vault
     attachments = {
-      folder = vim.fn.expand '~/Pictures/attachments/images', -- root folder for all attachments
-      pdf_folder = vim.fn.expand '~/Pictures/attachments/pdfs',
-      video_folder = vim.fn.expand '~/Pictures/attachments/videos',
-      audio_folder = vim.fn.expand '~/Pictures/attachments/audio',
+      folder = vim.fn.expand '~/attachments/images', -- root folder for all attachments
+      pdf_folder = vim.fn.expand '~/attachments/pdfs',
+      video_folder = vim.fn.expand '~/attachments/videos',
+      audio_folder = vim.fn.expand '~/attachments/audio',
       link_style = 'markdown', -- or 'wiki', based on preference
     },
 
