@@ -28,29 +28,28 @@ set --erase --universal fish_key_bindings
 # Interactive Shell Settings (Theme & Prompt Overrides)
 if status is-interactive
 
-    # --- Gruvbox Syntax Highlighting Colors ---
-    set -g fish_color_autosuggestion 504945
-    set -g fish_color_cancel -r
-    set -g fish_color_command a9b665
-    set -g fish_color_comment 928374
-    set -g fish_color_cwd green
-    set -g fish_color_cwd_root red
-    set -g fish_color_end ea6962
-    set -g fish_color_error ea6962
-    set -g fish_color_escape 89b482
-    set -g fish_color_history_current --bold
-    set -g fish_color_host normal
-    set -g fish_color_host_remote yellow
-    set -g fish_color_match --background=3c3836
+    # --- Gruvbox Dark Material Syntax Highlighting ---
     set -g fish_color_normal d4be98
-    set -g fish_color_operator 89b482
-    set -g fish_color_param d4be98
+    set -g fish_color_command a9b665
+    set -g fish_color_keyword ea6962
     set -g fish_color_quote d8a657
     set -g fish_color_redirection d3869b
-    set -g fish_color_search_match --background=3c3836
-    set -g fish_color_selection --background=3c3836
-    set -g fish_color_status red
-    set -g fish_color_user brgreen
+    set -g fish_color_end e78a4e
+    set -g fish_color_error ea6962
+    set -g fish_color_param d4be98
+    set -g fish_color_comment 928374
+    set -g fish_color_selection --background=504945
+    set -g fish_color_search_match --background=504945
+    set -g fish_color_operator e78a4e
+    set -g fish_color_escape 89b482
+    set -g fish_color_autosuggestion 7c6f64
+    set -g fish_color_cancel -r
+    set -g fish_color_cwd a9b665
+    set -g fish_color_cwd_root ea6962
+    set -g fish_color_host d4be98
+    set -g fish_color_host_remote d8a657
+    set -g fish_color_status ea6962
+    set -g fish_color_user a9b665
     set -g fish_color_valid_path 89b482
 
     # --- Pager Colors ---
