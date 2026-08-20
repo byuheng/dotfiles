@@ -230,7 +230,7 @@ bindsym $mod+r mode "resize"
 
 #
 # Status Bar:
-exec_always pkill  -9 waybar; waybar
+exec pkill waybar; waybar
 
 include /etc/sway/config.d/*
 
