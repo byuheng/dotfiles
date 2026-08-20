@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 30,
+    "height": 36,
     "spacing": 4,
 
     "modules-left": [
@@ -46,6 +46,8 @@
 
     "temperature": {
         "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+        "hwmon-path-abs": "/sys/devices/platform/k10temp/hwmon",
+        "input-filename": "temp1_input",
         "critical-threshold": 80,
         "format": "TEMP {temperatureC}°C",
         "interval": 2

@@ -79,7 +79,7 @@ button:hover {
 }
 
 #clock {
-    color: #7daea3;
+    color: #ebdbb2;
 }
 
 #battery {
@@ -113,7 +113,6 @@ button:hover {
 
 #temperature {
     color: #e78a4e;
-    background-color: #282828;
 }
 
 #temperature.critical {
@@ -123,15 +122,6 @@ button:hover {
 
 #memory {
     color: #d3869b;
-}
-
-#temperature {
-    color: #ea6962;
-}
-
-#temperature.critical {
-    background-color: #ea6962;
-    color: #1d2021;
 }
 
 #backlight {
