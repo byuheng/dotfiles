@@ -1,181 +1,168 @@
 * {
-    font-family: "JetBrainsMono Nerd Font", "Fira Sans Semibold", "Font Awesome 6 Free", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    min-height: 0;
+    font-family: "JetBrainsMono Nerd Font", FontAwesome, Roboto, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
 }
 
 window#waybar {
-    background-color: #1D2021;
-    color: #D4BE98;            /* Added */
-    font-size: 13px;
-    border-radius: 0px;
-    margin: 0px;
-    padding: 0;
-    min-height: 0;
+    background-color: #1d2021;
+    border-bottom: 2px solid #3c3836;
+    color: #d4be98;
+    transition-property: background-color;
+    transition-duration: .5s;
 }
 
-/* Left-most: Arch icon */
-#custom-appmenu {
-  font-size: 14px;
-  background-image: url('/usr/share/icons/cachyos.svg');
-  background-color: #1D2021;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  padding: 0px 8px;
-    
+window#waybar.hidden {
+    opacity: 0.2;
 }
 
-#custom-appmenuicon {
-    font-size: 14px;
-    color: #1793d1;
-    background-color: #32302F;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    padding: 0px 8px;
+button {
+    box-shadow: inset 0 -3px transparent;
+    border: none;
+    border-radius: 0;
 }
 
-/* Right-most: Clock */
-#clock {
-    font-size: 13px;
-    background-color: #32302F;
-    color: #D4BE98;
-    border-radius: 0px;
-    padding: 0px 8px;
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px #d4be98;
 }
 
-/* Active window title */
-#window {
-    font-size: 13px;
-    font-weight: 800;
-    color: #89B482;
-    border-radius: 0px;
-    padding: 0px 12px;
-    background-color: #1D2021;
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: #a89984;
 }
 
-/* Workspace container */
-#workspaces,
-#niri-workspaces {
-    background: #282828;
-    border-radius: 0px;
-    margin: 0px;
-    padding: 0px;
+#workspaces button:hover {
+    background: #3c3836;
+    color: #d4be98;
 }
 
-/* Individual workspace buttons */
-#workspaces button,
-#niri-workspaces button {
-    border-radius: 0px;
-    font-size: 13px;
-    font-weight: 800;
-    color: #D4BE98;
-    padding: 0px 8px;
-    background: transparent;
+#workspaces button.focused, #workspaces button.active {
+    background-color: #3c3836;
+    color: #a9b665;
+    box-shadow: inset 0 -3px #a9b665;
 }
 
-#workspaces button.focused,
-#workspaces button.active,
-#niri-workspaces button.focused,
-#niri-workspaces button.active {
-    color: #A9B665;
-    background: #32302F;
+#workspaces button.urgent {
+    background-color: #ea6962;
+    color: #1d2021;
 }
 
-#workspaces button:hover,
-#niri-workspaces button:hover {
-    background: #504945;
-    color: #D4BE98;
-}
-
-/* Power/exit button */
-#custom-exit {
-    background-color: #EA6962;
-    font-size: 13px;
-    font-weight: 800;
-    color: #1D2021;
-    padding: 0px 8px;
-    margin: 0px;
-}
-
-/* Tooltips */
-tooltip {
-    border-radius: 12px;
-    background-color: #282828;
-    color: #D4BE98;
-    padding: 4px 8px;
-}
-
-/* Taskbar */
-#taskbar {
-    background-color: #282828;
-    margin: 0px;
-    border-radius: 0px;
-    font-weight: normal;
-}
-
-#taskbar button {
-    min-height: 0;
-    padding: 0px 4px;
-    margin: 0px;
-}
-
-#taskbar button.active, #taskbar button.minimized {
-    padding: 0px 4px;
-}
-
-/* All system info modules */
-#cpu,
-#temperature,
-#memory,
-#backlight,
-#pulseaudio,
-#network,
-#bluetooth,
+#clock,
 #battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
 #tray,
-#custom-updates,
-#custom-notification {
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd {
+    padding: 0 10px;
+    color: #d4be98;
     background-color: #282828;
-    font-size: 13px;
-    font-weight: 800;
-    color: #D4BE98;
-    border-radius: 0px;
-    padding: 0px 10px;
+    margin: 3px 2px;
+    border-radius: 4px;
 }
 
-/* Make CPU turn orange if it's working hard (>80%) */
-#cpu.warning {
-    color: #E78A4E;
+#window {
+    margin: 0 4px;
+    color: #d4be98;
 }
 
-/* Temperature */
-#temperature {
-    background-color: #282828;
-    color: #D4BE98;
-    padding: 0px 10px;
+#clock {
+    color: #7daea3;
 }
 
-/* Temperature critical */
-#temperature.critical {
-    color: #EA6962;
+#battery {
+    color: #a9b665;
 }
 
-/* Make RAM turn red if it's almost full (>90%) */
-#memory.critical {
-    color: #EA6962;
-}
-
-/* Battery critical warning */
-#battery.critical:not(.charging) {
-    background-color: #EA6962;
-    color: #1D2021;
-    animation: blink 0.5s linear infinite alternate;
+#battery.charging, #battery.plugged {
+    color: #89b482;
 }
 
 @keyframes blink {
     to {
-        background-color: #1D2021;
-        color: #EA6962;
+        background-color: #ea6962;
+        color: #1d2021;
     }
+}
+
+#battery.critical:not(.charging) {
+    background-color: #ea6962;
+    color: #d4be98;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu {
+    color: #e78a4e;
+}
+
+#temperature {
+    color: #e78a4e;
+    background-color: #282828;
+}
+
+#temperature.critical {
+    background-color: #ea6962;
+    color: #1d2021;
+}
+
+#memory {
+    color: #d3869b;
+}
+
+#temperature {
+    color: #ea6962;
+}
+
+#temperature.critical {
+    background-color: #ea6962;
+    color: #1d2021;
+}
+
+#backlight {
+    color: #d8a657;
+}
+
+#network {
+    color: #7daea3;
+}
+
+#network.disconnected {
+    color: #ea6962;
+}
+
+#pulseaudio {
+    color: #d8a657;
+}
+
+#pulseaudio.muted {
+    color: #928374;
+}
+
+#tray {
+    background-color: #282828;
+}
+
+#scratchpad {
+    background: #3c3836;
+}
+
+#mode {
+    background-color: #ea6962;
+    color: #1d2021;
 }
