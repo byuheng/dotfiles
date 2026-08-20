@@ -19,7 +19,7 @@ set $term foot
 set $menu wmenu-run
 
 ### wlsunset configuration
-exec wlsunset -l 34.0 -L -118.2 -t 3500
+exec_always pkill -x wlsunset; sleep 1; wlsunset -l 34.0 -L -118.2 -t 3500
 
 ### Output configuration
 #
@@ -233,3 +233,30 @@ bindsym $mod+r mode "resize"
 exec_always pkill  -9 waybar; waybar
 
 include /etc/sway/config.d/*
+
+### Border Styles & Gruvbox Colors
+default_border pixel 2
+default_floating_border pixel 2
+
+# Gruvbox Color Palette Variables
+set $bg        #282828
+set $fg        #d4be98
+set $gray      #3c3836
+set $red       #ea696c
+set $green     #a9b665
+set $yellow    #d8a657
+
+# Target                Border  BG      Text    Indicator Child Border
+client.focused          $yellow $bg     $fg     $green    $yellow
+client.focused_inactive $gray   $bg     $fg     $gray     $gray
+client.unfocused        $gray   $bg     $fg     $gray     $gray
+client.urgent           $red    $bg     $fg     $red      $red
+gaps inner 6
+gaps outer 4
+
+# Set gap sizes (in pixels)
+# Smart gaps: Hide gaps if there is only 1 window on the workspace
+smart_gaps off
+
+# Smart borders: Hide borders if there is only 1 window on the workspace
+smart_borders off
