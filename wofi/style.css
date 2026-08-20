@@ -1,50 +1,34 @@
-* {
-    font-family: "Hack", monospace;
-}
-
 window {
-    background-color: #1d2021; /* bg0_hard */
-    color: #fbf1c7;            /* fg0 */
+    margin: 0px;
+    border: 2px solid #a9b665;
+    background-color: #1d2021;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 14px;
 }
 
 #input {
     margin: 5px;
-    border-radius: 0px;
-    border: 2px solid #504945; /* bg2 */
-    background-color: #3c3836; /* bg1 */
-    color: #ebdbb2;            /* fg1 */
+    border: 1px solid #504945;
+    color: #d4be98;
+    background-color: #282828;
 }
 
-#inner-box {
-    background-color: #1d2021; /* bg0_hard */
-}
-
-#outer-box {
-    margin: 2px;
-    padding: 10px;
-    background-color: #1d2021; /* bg0_hard */
-    border: 1px solid #928374; /* gray border */
-}
-
-#scroll {
+#inner-box, #outer-box {
     margin: 5px;
+    border: none;
+    background-color: #1d2021;
 }
 
 #text {
-    padding: 4px;
-    color: #ebdbb2;            /* fg1 */
-}
-
-#entry:nth-child(even){
-    background-color: #282828; /* subtle dark variation */
+    margin: 5px;
+    border: none;
+    color: #d4be98;
 }
 
 #entry:selected {
-    background-color: #504945; /* bg2 (selection highlight) */
+    background-color: #504945;
 }
 
 #text:selected {
-    background: transparent;
-    color: #a9b665;            /* green for the selected text */
-    font-weight: bold;
+    color: #a9b665;
 }

@@ -78,6 +78,7 @@ output DP-3 mode 1920x1080@239.760Hz
     bindsym $mod+Shift+q kill
 
     # Start your launcher
+    set $menu wofi --show drun
     bindsym $mod+d exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
