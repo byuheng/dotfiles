@@ -260,3 +260,12 @@ smart_gaps off
 
 # Smart borders: Hide borders if there is only 1 window on the workspace
 smart_borders off
+
+#
+### Transparency 
+# Set specific opacity rules for specific apps FIRST
+for_window [app_id="^(?!zen$).*"] opacity 0.95
+
+# Set opacity for all standard tiled windows (0.0 to 1.0)
+for_window [app_id="zen"] opacity 1.0
+
