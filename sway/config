@@ -273,4 +273,4 @@ for_window [app_id="^(?!zen$).*"] opacity 0.95
 for_window [app_id="zen"] opacity 1.0
 
 # Polkit Authentication Agent
-exec_always pkill -x polkit-gnome-authentication-agent-1; nohup /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 >/dev/null 2>&1 &
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
