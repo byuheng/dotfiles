@@ -271,3 +271,6 @@ for_window [app_id="^(?!zen$).*"] opacity 0.95
 
 # Set opacity for all standard tiled windows (0.0 to 1.0)
 for_window [app_id="zen"] opacity 1.0
+
+# Polkit Authentication Agent for BTRFS Assistant
+exec_always pkill -x polkit-gnome-authentication-agent-1; /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
