@@ -230,9 +230,12 @@ bindsym $mod+r mode "resize"
 
 #
 # Status Bar:
-exec pkill waybar; waybar
+bar {
+    swaybar_command waybar
+}
 
-include /etc/sway/config.d/*
+# CachyOS default
+#include /etc/sway/config.d/*
 
 ### Border Styles & Gruvbox Colors
 default_border pixel 2
