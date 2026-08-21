@@ -271,4 +271,3 @@ for_window [app_id="^(?!zen$).*"] opacity 0.95
 
 # Set opacity for all standard tiled windows (0.0 to 1.0)
 for_window [app_id="zen"] opacity 1.0
-
