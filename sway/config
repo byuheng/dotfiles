@@ -274,3 +274,12 @@ for_window [app_id="zen"] opacity 1.0
 
 # Polkit Authentication Agent
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+#
+### cliphist configuration
+# Background cliphist daemons
+exec_always pkill wl-paste; wl-paste --type text --watch cliphist store 
+exec_always wl-paste --type image --watch cliphist store 
+
+# Keybinding to view and select clipboard history via Wofi
+bindsym $mod+z exec cliphist list | wofi --dmenu | cliphist decode | wl-copy
