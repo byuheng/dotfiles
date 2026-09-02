@@ -4,6 +4,9 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway XDG_SESSION_TYPE=wayland
+exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -19,7 +22,7 @@ set $term foot
 set $menu wmenu-run
 
 ### wlsunset configuration
-exec_always pkill -x wlsunset; sleep 1; wlsunset -l 34.0 -L -118.2 -t 3500
+exec_always pkill -x wlsunset; wlsunset -l 34.0 -L -118.2 -t 3500
 
 ### Output configuration
 #
@@ -292,8 +295,7 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #
 ### cliphist configuration
 # Background cliphist daemons
-exec_always pkill wl-paste; wl-paste --type text --watch cliphist store 
-exec_always wl-paste --type image --watch cliphist store 
+exec_always "pkill -x wl-paste; wl-paste --type text --watch cliphist store & wl-paste --type image --watch cliphist store"
 
 # Keybinding to view and select clipboard history via Wofi
 bindsym $mod+z exec cliphist list | wofi --dmenu | cliphist decode | wl-copy
