@@ -22,7 +22,7 @@ set $term foot
 set $menu wmenu-run
 
 ### wlsunset configuration
-exec_always pkill -x wlsunset; wlsunset -l 34.0 -L -118.2 -t 3500
+exec_always sh -c 'pkill -x wlsunset; wlsunset -l 34.0 -L -118.2 -t 3500'
 
 ### Output configuration
 #
