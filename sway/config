@@ -43,14 +43,20 @@ output DP-3 mode 1920x1080@239.760Hz
 #
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
+
+exec swayidle -w \
+     timeout 300 'swaylock -f -c 000000' \
+     timeout 600 'swaymsg "output * power off"' \
+     resume 'swaymsg "output * power on"' \
+     before-sleep 'swaylock -f -c 000000' 
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
+
+### Swaylock
+bindsym $mod+Mod1+l exec swaylock -f -c 000000
+# Mod1 = ALT
 
 ### Input configuration
 #
@@ -231,7 +237,7 @@ bindsym $mod+r mode "resize"
 #  
 ### Print screenshot & OCR with grim + slurp 
 # OCR: Drag to copy TEXT directly to clipboard
-bindsym Alt+Print exec grim -g "$(slurp)" - | tesseract stdin stdout -l eng | wl-copy
+bindsym Mod1+Print exec grim -g "$(slurp)" - | tesseract stdin stdout -l eng | wl-copy
 
 # SAVE AREA: Drag to save selection directly to ~/attachments
 bindsym Print exec grim -g "$(slurp)" ~/attachments/$(date +'%Y%m%d_%H%M%S').png
