@@ -238,19 +238,19 @@ bindsym $mod+r mode "resize"
 #  
 ### Print screenshot & OCR with grim + slurp 
 # OCR: Drag to copy TEXT directly to clipboard
-bindsym Mod1+Print exec grim -g "$(slurp)" - | tesseract stdin stdout -l eng | wl-copy
+bindsym Mod1+Print exec sh -c 'grim -g "$(slurp)" - | tesseract stdin stdout -l eng | wl-copy'
 
 # SAVE AREA: Drag to save selection directly to ~/attachments
 bindsym Print exec sh -c 'grim -g "$(slurp)" ~/attachments/"$(date +'%Y%m%d_%H%M%S').png"'
 
 # COPY AREA: Drag to copy image directly to clipboard
-bindsym Ctrl+Print exec grim -g "$(slurp)" - | wl-copy
+bindsym Ctrl+Print exec sh -c 'grim -g "$(slurp)" - | wl-copy'
 
 # SAVE & COPY AREA: Save selection AND copy to clipboard
-bindsym Shift+Ctrl+Print exec grim -g "$(slurp)" - | tee ~/attachments/$(date +'%Y%m%d_%H%M%S').png | wl-copy
+bindsym Shift+Ctrl+Print exec sh -c 'grim -g "$(slurp)" - | tee ~/attachments/$(date +'%Y%m%d_%H%M%S').png | wl-copy'
 
 # FULLSCREEN: Instantly save full screen to ~/attachments
-bindsym Shift+Print exec grim ~/attachments/$(date +'%Y%m%d_%H%M%S').png
+bindsym Shift+Print exec sh -c 'grim ~/attachments/"$(date +'%Y%m%d_%H%M%S').png"'
 
 #
 # Status Bar:
