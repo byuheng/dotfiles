@@ -6,7 +6,6 @@
 
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway XDG_SESSION_TYPE=wayland
 exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE
-exec systemctl --user restart xdg-desktop-portal xdg-desktop-portal-wlr
 
 ### Variables
 #
@@ -300,6 +299,9 @@ for_window [app_id="zen"] opacity 1.0
 
 # Polkit Authentication Agent
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+# Prevent sleep during media playback 
+exec sway-audio-idle-inhibit
 
 #
 ### cliphist configuration
