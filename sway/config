@@ -41,10 +41,11 @@ output DP-3 mode 1920x1080@239.760Hz
 
 ### Idle configuration
 #
-# Example configuration:
-#
+# Prevent sleep during media playback 
+exec sway-audio-idle-inhibit
 
-exec swayidle -w \
+exec systemd-inhibit --what=idle --who=swayidle --why="idle lock" --mode=block \
+     swayidle -w \
      timeout 300 'swaylock -f -c 000000' \
      timeout 600 'swaymsg "output * power off"' \
      resume 'swaymsg "output * power on"' \
@@ -298,9 +299,6 @@ for_window [app_id="zen"] opacity 1.0
 
 # Polkit Authentication Agent
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-
-# Prevent sleep during media playback 
-exec sway-audio-idle-inhibit
 
 #
 ### cliphist configuration
