@@ -42,10 +42,9 @@ output DP-3 mode 1920x1080@239.760Hz
 ### Idle configuration
 #
 # Prevent sleep during media playback 
-exec sway-audio-idle-inhibit
+exec wayland-pipewire-idle-inhibit
 
-exec systemd-inhibit --what=idle --who=swayidle --why="idle lock" --mode=block \
-     swayidle -w \
+exec swayidle -w \
      timeout 300 'swaylock -f -c 000000' \
      timeout 600 'swaymsg "output * power off"' \
      resume 'swaymsg "output * power on"' \
