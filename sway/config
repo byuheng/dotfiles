@@ -68,7 +68,7 @@ bindsym $mod+Mod1+l exec swaylock -f -c 000000
 # Mod1 = ALT
 
 ### Input configuration
-:w
+
 # Example configuration:
 #
 #   input type:touchpad {
