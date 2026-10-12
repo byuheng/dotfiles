@@ -37,8 +37,8 @@ output * bg ~/wallpapers/one_piece_luffy_going_merry_dark_wallpaper.jpg fill
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
-output DP-2 mode 1920x1080@239.760Hz position 0,0
-output DP-1 mode 1920x1080@239.761Hz position 0,1080
+output DP-1 mode 1920x1080@239.761Hz transform normal position 1080,0
+output DP-2 mode 1920x1080@239.760Hz transform 270 position 0,0
 
 workspace 1 output DP-1
 workspace 2 output DP-2
@@ -68,7 +68,7 @@ bindsym $mod+Mod1+l exec swaylock -f -c 000000
 # Mod1 = ALT
 
 ### Input configuration
-#
+:w
 # Example configuration:
 #
 #   input type:touchpad {
