@@ -28,7 +28,7 @@ exec_always sh -c 'pkill -x wlsunset; wlsunset -l 36.7 -L -119.8 -t 2700'
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg ~/wallpapers/one_piece_luffy_going_merry_dark_wallpaper.jpg fill
-output DP-2 bg ~/wallpapers/vagabond_manga_portrait.png fill
+output DP-2 bg ~/wallpapers/one_punch_man_spaceship_landscape_wallpaper.png fill
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
 #
@@ -38,8 +38,8 @@ output DP-2 bg ~/wallpapers/vagabond_manga_portrait.png fill
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
-output DP-1 mode 1920x1080@239.761Hz transform normal position 1080,0
-output DP-2 mode 1920x1080@239.760Hz transform 270 position 0,0
+output DP-1 mode 1920x1080@239.761Hz transform normal position 0,1080
+output DP-2 mode 1920x1080@239.760Hz transform normal position 0,0
 
 workspace 1 output DP-1
 workspace 2 output DP-2
