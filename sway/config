@@ -28,7 +28,7 @@ exec_always sh -c 'pkill -x wlsunset; wlsunset -l 36.7 -L -119.8 -t 2700'
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg ~/wallpapers/one_piece_luffy_going_merry_dark_wallpaper.jpg fill
-output DP-2 bg ~/wallpapers/one_piece_manga_portrait_wallpaper.png fill
+output DP-2 bg ~/wallpapers/vagabond_manga_portrait.png fill
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
 #
