@@ -65,3 +65,19 @@ vim.opt.formatoptions:remove { 'c', 'r', 'o' } -- Disable automatic insertion of
 -- Spell check
 vim.opt_local.spell = true -- turn spell check on
 vim.opt_local.spelllang = 'en_us' -- set the language
+
+-- System Clipboard Integration (Wayland wl-clipboard)
+vim.opt.clipboard = 'unnamedplus'
+
+vim.g.clipboard = {
+  name = 'wl-clipboard',
+  copy = {
+    ['+'] = 'wl-copy',
+    ['*'] = 'wl-copy',
+  },
+  paste = {
+    ['+'] = 'wl-paste --no-newline',
+    ['*'] = 'wl-paste --no-newline',
+  },
+  cache_enabled = 0,
+}
