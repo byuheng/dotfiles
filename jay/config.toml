@@ -158,7 +158,7 @@ logo-d = { type = "exec", exec = [ "noctalia", "msg", "panel-toggle", "launcher"
 logo-z = { type = "exec", exec = [ "noctalia", "msg", "panel-toggle", "clipboard" ] }
 logo-c = { type = "exec", exec = [ "noctalia", "msg", "panel-toggle", "control-center" ] }
 logo-shift-c = { type = "exec", exec = [ "noctalia", "msg", "settings-toggle" ] }
-#logo-shift-e = { type = "exec", exec = [ "noctalia", "msg", "panel-toggle", "session" ] }
+logo-w = { type = "exec", exec = [ "noctalia", "msg", "panel-toggle", "noctalia/wallhaven:browser" ] }
 
 Print = { type = "exec", exec = [ "noctalia", "msg", "screenshot-region" ] }
 shift-Print = { type = "exec", exec = [ "noctalia", "msg", "screenshot-fullscreen" ] }
