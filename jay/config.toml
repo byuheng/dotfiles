@@ -14,7 +14,6 @@ keymap.rmlvo = {
 # -- Start workspace 1 in DP-1 at startup.
 on-graphics-initialized = [
     { type = "exec", exec = ["noctalia", "--daemon"] },
-    { type = "exec", exec = ["wayland-pipewire-idle-inhibit"] },
     { type = "show-workspace", name = "1" },
     "focus-down",
 ]
