@@ -11,8 +11,11 @@ keymap.rmlvo = {
 
 # -- https://mahkoh.github.io/jay/book/configuration/startup.html --
 # -- Start your favorite programs at startup.
+# -- Start workspace 1 in DP-1 at startup.
 on-graphics-initialized = [
     { type = "exec", exec = ["noctalia", "--daemon"] },
+    { type = "show-workspace", name = "1" },
+    "focus-down",
 ]
 
 # -- Enable/disable Jay's default bar and also window title bars.
@@ -81,10 +84,19 @@ scale = 1.0
 x = 0
 y = 1080
 
+on-graphics-initialized = [
+    { type = "exec", exec = ["noctalia", "--daemon"] },
+    { type = "show-workspace", name = "1"},
+    "focus-down",
+]
+
 # -- https://mahkoh.github.io/jay/book/hdr.html --
 # Uncomment the line below to enable HDR.
 [color-management]
 # enabled = true
+
+[workspaces."1"]
+initial-ouput.connector = "DP-1"
 
 # -- https://mahkoh.github.io/jay/book/configuration/theme.html --
 [theme]
@@ -132,9 +144,9 @@ logo-space = "toggle-floating"
 logo-shift-space = "toggle-float-above-fullscreen"
 logo-shift-q = "close"
 
-logo-s = { type = "toggle-overlay", name = "scratchpad" }
-logo-shift-s = { type = "hide-overlay", name = "scratchpad" }
-logo-Escape = "hid-overlays"
+logo-minus = { type = "toggle-overlay", name = "scratchpad" }
+logo-shift-minus = { type = "hide-overlay", name = "scratchpad" }
+logo-Escape = "hide-overlays"
 
 
 logo-Return = { type = "exec", exec = "foot" }
