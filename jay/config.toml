@@ -117,34 +117,40 @@ logo-shift-Down = "move-down"
 logo-shift-Up = "move-up"
 logo-shift-Right = "move-right"
 
-logo-d = "split-horizontal"
+logo-b = "split-horizontal"
 logo-v = "split-vertical"
-
 logo-t = "toggle-split"
 logo-m = "toggle-mono"
+logo-p = "focus-parent"
 
 # -- Jay's Control Center to make changes in runtime easily. The changes made from it don't persist after a reboot.
 #logo-c = "open-control-center"
 # Blank window and cannot kill
 
 logo-f = "toggle-fullscreen"
-logo-q = "close"
-logo-v = "toggle-floating"
-logo-shift-v = "toggle-float-above-fullscreen"
+logo-space = "toggle-floating"
+logo-shift-space = "toggle-float-above-fullscreen"
+logo-shift-q = "close"
+
+logo-s = { type = "toggle-overlay", name = "scratchpad" }
+logo-shift-s = { type = "hide-overlay", name = "scratchpad" }
+logo-Escape = "hid-overlays"
+
 
 logo-Return = { type = "exec", exec = "foot" }
 logo-e = { type = "exec", exec = "dolphin" }
 
-# -- Noctalia
-logo-space = { type = "exec", exec = [ "noctalia", "msg", "panel-toggle", "launcher" ] }
-logo-w = { type = "exec", exec = [ "noctalia", "msg", "panel-toggle", "noctalia/wallhaven:browser" ] }
-logo-s = { type = "exec", exec = [ "noctalia", "msg", "panel-toggle", "control-center" ] }
-logo-shift-s = { type = "exec", exec = [ "noctalia", "msg", "settings-toggle" ] }
-logo-shift-e = { type = "exec", exec = [ "noctalia", "msg", "panel-toggle", "session" ] }
 
-logo-p = { type = "exec", exec = [ "noctalia", "msg", "screenshot-region" ] }
-logo-shift-p = { type = "exec", exec = [ "noctalia", "msg", "screenshot-fullscreen" ] }
-logo-ctrl-p = { type = "exec", exec = [ "noctalia", "msg", "screenshot-fullscreen", "all" ] }
+# -- Noctalia
+logo-d = { type = "exec", exec = [ "noctalia", "msg", "panel-toggle", "launcher" ] }
+logo-z = { type = "exec", exec = [ "noctalia", "msg", "panel-toggle", "clipboard" ] }
+logo-c = { type = "exec", exec = [ "noctalia", "msg", "panel-toggle", "control-center" ] }
+logo-shift-c = { type = "exec", exec = [ "noctalia", "msg", "settings-toggle" ] }
+#logo-shift-e = { type = "exec", exec = [ "noctalia", "msg", "panel-toggle", "session" ] }
+
+Print = { type = "exec", exec = [ "noctalia", "msg", "screenshot-region" ] }
+shift-Print = { type = "exec", exec = [ "noctalia", "msg", "screenshot-fullscreen" ] }
+ctrl-Print = { type = "exec", exec = [ "noctalia", "msg", "screenshot-fullscreen", "all" ] }
 
 # -- Reload Jay's configuration.
 logo-shift-r = "reload-config-toml"
