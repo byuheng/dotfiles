@@ -3,6 +3,8 @@
 # -- Mouse focus
 unstable-mouse-follows-focus = true
 
+split-reuses-container = true
+
 # -- Choose your keyboard layout here.
 keymap.rmlvo = {
     layout = "us",
@@ -14,8 +16,7 @@ keymap.rmlvo = {
 # -- Start workspace 1 in DP-1 at startup.
 on-graphics-initialized = [
     { type = "exec", exec = ["noctalia", "--daemon"] },
-    { type = "show-workspace", name = "1" },
-    "focus-down",
+    { type = "show-workspace", name = "1", output.connector = "DP-1" },
 ]
 
 # -- Enable/disable Jay's default bar and also window title bars.
@@ -36,8 +37,8 @@ clean-logs-older-than.days = 7
 
 # -- Let Noctalia take care of the idle.
 idle = {
-    minutes = 5,
-    grace-period = { seconds = 5 },
+    minutes = 10,
+    grace-period = { seconds = 10 },
 }
 
 # -- https://mahkoh.github.io/jay/book/configuration/gpu.html --
@@ -84,19 +85,12 @@ scale = 1.0
 x = 0
 y = 1080
 
-on-graphics-initialized = [
-    { type = "exec", exec = ["noctalia", "--daemon"] },
-    { type = "show-workspace", name = "1"},
-    "focus-down",
-]
 
 # -- https://mahkoh.github.io/jay/book/hdr.html --
 # Uncomment the line below to enable HDR.
 [color-management]
 # enabled = true
 
-[workspaces."1"]
-initial-ouput.connector = "DP-1"
 
 # -- https://mahkoh.github.io/jay/book/configuration/theme.html --
 [theme]
@@ -116,6 +110,9 @@ highlight-color = "#D8A657"
 # -- If you prefer to launch your games in native wayland with Proton-CachyOS. I recommend it for Jay.
 # PROTON_USE_WAYLAND = "1"
 
+[actions]
+toggle-layer-focus = "focus-above"
+
 # -- https://mahkoh.github.io/jay/book/configuration/shortcuts.html --
 # -- 'logo' is your Win/Super key.
 [shortcuts]
@@ -129,6 +126,9 @@ logo-shift-Down = "move-down"
 logo-shift-Up = "move-up"
 logo-shift-Right = "move-right"
 
+logo-Tab = "focus-next"
+logo-shift-Tab = "focus-prev"
+
 logo-b = "split-horizontal"
 logo-v = "split-vertical"
 logo-t = "toggle-split"
@@ -140,8 +140,9 @@ logo-p = "focus-parent"
 # Blank window and cannot kill
 
 logo-f = "toggle-fullscreen"
-logo-space = "toggle-floating"
-logo-shift-space = "toggle-float-above-fullscreen"
+logo-shift-f = "toggle-float-above-fullscreen"
+logo-space = "$toggle-layer-focus"
+logo-shift-space = "toggle-floating"
 logo-shift-q = "close"
 
 logo-minus = { type = "toggle-overlay", name = "scratchpad" }
@@ -149,8 +150,9 @@ logo-shift-minus = { type = "hide-overlay", name = "scratchpad" }
 logo-Escape = "hide-overlays"
 
 
-logo-Return = { type = "exec", exec = "foot" }
-logo-e = { type = "exec", exec = "dolphin" }
+logo-Return = ["split-major", { type = "exec", exec = "foot" }]
+logo-e = { type = "exec", exec = "thunar" }
+logo-y = { type = "exec", exec = ["foot", "--app-id=yazi-float", "yazi"] }
 
 
 # -- Noctalia
@@ -269,13 +271,17 @@ XF86MonBrightnessDown = {
     allow-locked = true,
 }
 
+[focus-history]
+only-visible = true
+same-workspace = true
+
 # -- https://mahkoh.github.io/jay/book/window-rules.html --
 # -- Set your window-rules below. You can use the Jay' Control Center's 'Window Search' to check for app-id or title.
-
 [[windows]]
 match.any = [
    { app-id = "com.shellyorg.shelly" },
-   { app-id = "org.kde.dolphin" },
+   { app-id = "thunar" },
+   { app-id = "yazi-float" },
    { x-class = "steam", not.title-regex = "^[Ss]team$" },
    { title-regex = "^Steam Settings$" },
    { title-regex = "^(Open File)(.*)$" },
@@ -289,7 +295,6 @@ match.any = [
    { title-regex = "^(Select EXE to Run)(.*)$" },
    { title-regex = "^(pavucontrol)$" },
    { title-regex = "^.*Welcome$" },
-   { title-regex = "^(Copying — Dolphin)$" },
    { title-regex = "^.*is sharing (a window|your screen).*$" },
    { title-regex = "^([Pp]icture[-\\s]?[Ii]n[-\\s]?[Pp]icture)(.*)$" },
    { title-regex = "^Vivaldi Settings.*$" },
@@ -299,10 +304,27 @@ match.any = [
 ]
 initial-tile-state = "floating"
 
-# -- So floating windows will show up above fullscreen windows.
+# -- Floating windows visible above fullscreen apps
 [[windows]]
 match.floating = true
 action = "enable-float-above-fullscreen"
+
+# -- Dynamically flips layer focus toggle when a floating window is focus
+[[windows]]
+match = { floating = true, focused = true }
+action = { type = "define-action", name = "toggle-layer-focus", action = "focus-below" }
+latch = { type = "define-action", name = "toggle-layer-focus", action = "focus-above" }
+
+# -- Count windows in the scratchpad overlay
+[[windows]]
+match.workspace = "scratchpad"
+action = { type = "inc-counter", name = "scratchpad-count" }
+latch = { type = "dec-counter", name = "scratchpad-count" }
+
+# -- When the scratchpad-count stops being > 0 (drops to 0), dismiss the overlay
+[[triggers]]
+match.counter.scratchpad-count.gt = 0
+latch = ["hide-overlays", "focus-tiles"]
 
 # -- https://mahkoh.github.io/jay/book/window-rules.html#granting-privileges --
 # -- So all clients have access to the privileged protocols. This also make sure Noctalia can manage workspaces, see active windows, take screenshots, etc.
