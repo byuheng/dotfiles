@@ -1,0 +1,9 @@
+[[mgr.prepend_keymap]]
+on = "q"
+run = "noop"
+desc = "Disable q quit"
+
+[[mgr.prepend_keymap]]
+on = "Q"
+run = "noop"
+desc = "Disable Q quit"
